@@ -113,17 +113,18 @@ int isEE(int i, int token, FILE *tape){
 int chkEE(int i, FILE * tape)
 {
 	int j = i;
-	char next;
+	char next = getc(tape);
 	
 	if (lexeme[i] == 'E' || lexeme[i] == 'e') {
 		next = getc(tape);
-		
+		j++;
 		if(next == '+' || next == '-' || isdigit(next))
 		{
-			while (isdigit(getc(tape))) j++;
+			lexeme[j] = next;
+			j++;
+			while (isdigit(lexeme[j] = getc(tape))) j++;
 		}
 		
 	} 
-
 	return j;
 }
