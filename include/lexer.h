@@ -4,7 +4,7 @@
 
 /*extern*/ char lexeme[MAXIDLEN+1];
 
-int isEE(int, FILE *);
+int isEE(int, int, FILE *);
 
 /*extern*/ double acc ;
 double acc;

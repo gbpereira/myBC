@@ -67,7 +67,6 @@ cmd(void)
 	if (! cmdend()) {
 		expr();
 		/**/printf("%lg\n",acc);/**/
-		_getche();
 		switch(lookahead){
 		case ';':
 			match(';');

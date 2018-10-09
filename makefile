@@ -4,6 +4,8 @@ includedpath=./include/
 
 CFLAGS=-g -I$(includedpath)
 
+CC=gcc
+
 objlist=lexer.c main.c parser.c vm.c
 
 exec=mybc

@@ -93,16 +93,10 @@ token_t gettoken(FILE *tape)
 	return getc(tape);
 };
 
-// int isEE(int i, FILE *file)
-// {
-// 	return i;
-// }
-
-
 int isEE(int i, int token, FILE *tape){
 	int i0 = i;
 	
-	i = chkEE(i, tape); // FAZER BAGULHO DA NOTACAO CIENTIFICA. ESSA FUNÇÃO TEM QUE RETORNAR QUANTAS POSIÇÕES FORAM LIDAS
+	i = chkEE(i, tape);
 	
 	if(i > i0 && token == UINT) token = FLTP;
 	lexeme[i] = 0;
