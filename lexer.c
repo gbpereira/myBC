@@ -6,8 +6,8 @@
 void skipspaces(FILE * tape)
 {
 	int head;
-	while( isspace(head = getc(tape))){
-		if (head == '\n'){
+	while (isspace(head = getc(tape))) {
+		if (head == '\n') {
 			return;
 		}
 	}
@@ -16,16 +16,16 @@ void skipspaces(FILE * tape)
 /*
  * ID = [A-Za-z][_A-Za-z0-9]*
  */
-char lexeme[MAXIDLEN+1];
+char lexeme[MAXIDLEN + 1];
 token_t isID(FILE *tape)
 {
 	lexeme[0] = getc(tape);
 	if (isalpha(lexeme[0])) {
-		int i  = 1;
-		while(
-		  isalnum(lexeme[i] = getc(tape))
-		  || lexeme[i] == '_'
-		);
+		int i = 1;
+		while (
+			isalnum(lexeme[i] = getc(tape))
+			|| lexeme[i] == '_'
+			);
 		ungetc(lexeme[i], tape);
 		lexeme[i] = 0;
 		return ID;
@@ -39,21 +39,22 @@ token_t isID(FILE *tape)
 token_t isNUM(FILE *tape)
 {
 	int token = 0;
-	int i;
+	int i = 1;
 	if (isdigit(lexeme[0] = getc(tape))) {
 		if (lexeme[0] == '0') {
 			i = 1;
 		}
 		else {
-			for (i = 1; isdigit(lexeme[i] = getc(tape)); i++) {
-				ungetc(lexeme[i], tape);
-			}
-			token = UINT;
-			if (lexeme[i] == '.'){
-			token = FLTP;
-			i++;
 			while (isdigit(lexeme[i] = getc(tape)))	i++;
-			ungetc(lexeme[i], tape);
+				//ungetc(lexeme[i], tape);
+			
+			token = UINT;
+			if (lexeme[i] == '.')
+			{
+				token = FLTP;
+				i++;
+				while (isdigit(lexeme[i] = getc(tape)))	i++;
+				ungetc(lexeme[i], tape);
 			}
 			else {
 				ungetc(lexeme[i], tape);
@@ -87,12 +88,12 @@ token_t gettoken(FILE *tape)
 {
 	int token;
 	skipspaces(tape);
-	if ( token = isID(tape) ) return token;
-	if ( token = isNUM(tape) ) return token;
+	if (token = isID(tape)) return token;
+	if (token = isNUM(tape)) return token;
 	return getc(tape);
 };
 
 int isEE(int i, FILE *file)
 {
-	return 1;
+	return i;
 }
