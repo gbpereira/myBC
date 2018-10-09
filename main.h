@@ -6,6 +6,6 @@
 /*extern*/	FILE *source_code;
 
 void mybc(void);
-/*/*extern*/ int lookahead;	
-int gettoken(FILE *source_code);
+///*extern*/ int lookahead;	
+/*int gettoken(FILE *source_code);*/
 

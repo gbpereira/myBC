@@ -94,5 +94,5 @@ token_t gettoken(FILE *tape)
 
 int isEE(int i, FILE *file)
 {
-	return 0;
+	return 1;
 }
