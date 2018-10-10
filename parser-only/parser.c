@@ -6,7 +6,6 @@
 #include "lexer.h"
 #include "tokens.h"
 #include "vm.h"
-// #include <interface.h>
 #include "parser.h"
 #include "keywords.h"
 
@@ -88,14 +87,7 @@ char *keywords[] = {
 	"logout",
 	"bye",
 };
-/*
-enum{
-	QUIT =      20148,
-	EXIT,
-	LOGOUT,
-	BYE,				
-};
-*/
+
 /* LL(1) recursive parser
  *  
  *                                   /---<---(+)---<----\

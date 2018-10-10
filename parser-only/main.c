@@ -2,10 +2,9 @@
 #include <stdio.h>
 #include "main.h"
 
-///*extern*/
 FILE *source_code;
 
-/*extern*/ double acc;
+double acc;
 
 int 
 main(int argc, const char *argv[])

@@ -46,7 +46,6 @@ token_t isNUM(FILE *tape)
 		}
 		else {
 			while (isdigit(lexeme[i] = getc(tape)))	i++;
-				//ungetc(lexeme[i], tape);
 			
 			token = UINT;
 			if (lexeme[i] == '.')
